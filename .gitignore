@@ -1,0 +1,7 @@
+# phpstrom source
+.idea/
+.idea/*
+cPanelUAPI-error.log
+.phpunit.result.cache
+tmp/
+tmp/*
