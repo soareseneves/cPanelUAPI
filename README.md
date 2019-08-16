@@ -17,6 +17,6 @@ $query = array(
 
 $response = $cpanel->Module->function( $query );
 
-echo $response; //jason
+echo $response; //json
 
 ```
