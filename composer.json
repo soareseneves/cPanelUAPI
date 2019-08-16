@@ -1,5 +1,5 @@
 {
-    "name": "lcn/cpanel-uapi-php",
+    "name": "lecanardnoir/cpanel-uapi-php",
     "description": "Easy class to connect with cPanel UAPI only, this class depend on GuzzleHttp/Client. Inspire by scorpionslh/cpanel-uapi-php-class.",
     "type": "library",
     "require": {
