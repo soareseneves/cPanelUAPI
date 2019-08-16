@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="cPanel UAPI Project Test Suite" tests="7" assertions="6" errors="0" failures="0" skipped="1" time="0.034402">
+    <testsuite name="tests\UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" tests="7" assertions="6" errors="0" failures="0" skipped="1" time="0.034402">
+      <testcase name="test__getReturnThisInstance" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="29" assertions="1" time="0.017159"/>
+      <testcase name="test__getSetModule" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="34" assertions="1" time="0.000583"/>
+      <testcase name="test_getPropretiesDontExiste" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="40" assertions="1" time="0.000788"/>
+      <testcase name="test__call" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="46" assertions="1" time="0.014220"/>
+      <testcase name="testGetClient" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="63" assertions="1" time="0.000447"/>
+      <testcase name="testGetModuleReturnName" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="68" assertions="1" time="0.000423"/>
+      <testcase name="testRequestGetJsonOrError" class="tests\UAPITest" classname="tests.UAPITest" file="/home/burn/Workbench/php_projet/cpanel/cPanelUAPI/tests/UAPITest.php" line="74" assertions="0" time="0.000782">
+        <skipped/>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,9 @@
+UAPI (tests\UAPI)
+ [x] getReturnThisInstance
+ [x] getSetModule
+ [x] Get propreties dont existe
+ [x] call
+ [x] Get client
+ [x] Get module return name
+ [ ] Request get json or error
+

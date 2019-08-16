@@ -1,0 +1,26 @@
+{
+    "name": "lcn/cpanel-uapi-php",
+    "description": "Easy class to connect to cPanel UAPI only.",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.0",
+        "ext-json": "*"
+    },
+    "license": "GPL3.0",
+    "authors": [
+        {
+            "name": "LeCanardNoir",
+            "email": "dev.lecanardnoir@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "autoload": {
+        "psr-4": {
+            "cpanel\\" : "src",
+            "tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.3"
+    }
+}
