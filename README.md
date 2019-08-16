@@ -4,8 +4,8 @@
 
 PHP Class inspired by [scorpionslh/cpanel-uapi-php-class](https://github.com/scorpionslh/cpanel-uapi-php-class).
 ***
-### All the cPanel API reference
-https://documentation.cpanel.net/display/DD/Guide+to+UAPI
+### cPanel API reference
+<a href="https://documentation.cpanel.net/display/DD/Guide+to+UAPI" taget="_blank">Guide to UAPI</a>
 ***
 #### Installation
 ```bash
