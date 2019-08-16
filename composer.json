@@ -1,7 +1,7 @@
 {
     "name": "lcn/cpanel-uapi-php",
     "description": "Easy class to connect with cPanel UAPI only, this class depend on GuzzleHttp/Client. Inspire by scorpionslh/cpanel-uapi-php-class.",
-    "type": "package",
+    "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.0",
         "ext-json": "*"
