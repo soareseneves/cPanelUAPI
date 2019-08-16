@@ -13,7 +13,7 @@ composer require lecanardnoir/cpanel-uapi-php
 ```
 #### Usage:
 ```php
-use cPanel;
+use cPanel\UAPI;
 
 $cpanel = new UAPI( $domain, $user, $password );
 
@@ -29,7 +29,7 @@ echo $response; //json
 ```
 #### Example
 ```php
-use cPanel;
+use cPanel\UAPI;
 
 $cpanel = new UAPI( $domain, $user, $password );
 
