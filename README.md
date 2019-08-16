@@ -4,7 +4,7 @@
 ***
 PHP Class inspired by [scorpionslh/cpanel-uapi-php-class](https://github.com/scorpionslh/cpanel-uapi-php-class).
 ***
-####Usage
+#### Usage
 ```php
 use cPanel;
 
