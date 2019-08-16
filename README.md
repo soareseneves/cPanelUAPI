@@ -7,7 +7,11 @@ PHP Class inspired by [scorpionslh/cpanel-uapi-php-class](https://github.com/sco
 ### All the cPanel API reference
 https://documentation.cpanel.net/display/DD/Guide+to+UAPI
 ***
-#### Usage
+#### Installation
+```bash
+composer require lecanardnoir/cpanel-uapi-php
+```
+#### Usage:
 ```php
 use cPanel;
 
