@@ -6,7 +6,7 @@
         "guzzlehttp/guzzle": "^6.0",
         "ext-json": "*"
     },
-    "license": "GPL3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "LeCanardNoir",
