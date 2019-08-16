@@ -20,3 +20,26 @@ $response = $cpanel->Module->function( $query );
 echo $response; //json
 
 ```
+#### Example
+```php
+use cPanel;
+
+$cpanel = new UAPI( $domain, $user, $password );
+
+$query = array(
+    "domain"        => $domain,
+    "regex"         => "coordo",
+    "api.column"    => 1,
+    "api.columns_0" => "dest",
+    "api.columns_1" => "forward"
+);
+
+$response = $cpanel->Email->list_forwarders( $query );
+
+$response = (object) json_decode( $response, true ); //decode json
+
+var_dump( $response->data );
+
+```
+***
+This is my very first share php class and PHPunit test, so if any have an advice on this library please be my guest. :grin:
