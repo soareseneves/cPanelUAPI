@@ -10,16 +10,22 @@ namespace tests;
 
 use cpanel\UAPI;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use LogicException;
 use PHPUnit\Framework\TestCase;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Exception\RequestException;
 
 class UAPITest extends TestCase
 {
 
     private $_UAPI;
-    private $_domain = 'example.com';
-    private $_user = 'example';
-    private $_password = 'example';
+    private $_domain    = 'example.com';
+    private $_user      = 'example';
+    private $_password  = 'example';
 
     protected function setUp(): void
     {
@@ -71,15 +77,66 @@ class UAPITest extends TestCase
         $this->assertSame( 'testMe', $this->_UAPI->getModule() );
     }
 
-    public function testRequestGetJsonOrError()
+    public function testRequestGetJsonAndNoError()
     {
-        if ($this->_domain != 'example.com') {
-            $response = $this->_UAPI->Email->List_forwarders(array());
-            $this->assertJson($response);
-        }else{
-            $this->markTestIncomplete( "Need to setup with a real domain, user and password to complete this test.\nCan't make the Exception test, Guzzle throw and error and block all.\nWhen i try -- assertException -- it don't work. \n***** Don't know why, please help :) ****" );
-        }
+
+        $body = '{
+            "status": 1,
+            "messages": null,
+            "warnings": null,
+            "errors": null,
+            "data": []
+          }';
+        
+        
+        $mock = new MockHandler([new Response(200, [], $body)]);
+        $handler = HandlerStack::create($mock);
+        $this->_UAPI::setClient( new Client(['handler' => $handler]) );
+        
+        $response = $this->_UAPI->Email->list_forwarders( array() );
+
+        $this->assertJson( $response );
+        //no error
+        $json = json_decode($response, true);
+        $this->assertEquals( 1, $json['status'] );
 
     }
+
+    public function testRequestGetJsonWithError()
+    {
+        $body = '{
+            "messages": null,
+            "status": 0,
+            "data": null,
+            "errors": [
+              "The system could not find the function “test” in the module “Email”."
+            ],
+            "metadata": {},
+            "warnings": null
+          }';
+
+        $mock = new MockHandler([new Response(200, [], $body)]);
+        $handler = HandlerStack::create($mock);
+        $this->_UAPI::setClient( new Client(['handler' => $handler]) );
+
+        $response = $this->_UAPI->Email->test( array() );
+        
+        $json = json_decode( $response, true );
+        $this->assertEquals(0 ,$json['status']);
+        
+    }
+
+    public function testExceptionErrorInfo()
+    {
+
+        $response = $this->_UAPI->Email->list_forwarders(array());
+        $this->assertStringStartsWith("Error line:", $response);        
+    
+    }
+
+    /** 
+     * TODO: test cPanel Error -> function not find in Module
+     * TODO: test cPanel Error -> Module don't exist
+    */
 
 }

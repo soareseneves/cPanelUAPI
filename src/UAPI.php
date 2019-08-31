@@ -36,6 +36,11 @@ class UAPI
         return self::$client;
     }
 
+    public static function setClient( Client $newClient ): void
+    {
+        self::$client = $newClient;
+    }
+
 
     /**
      * UAPI constructor.
